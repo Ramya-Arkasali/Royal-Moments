@@ -6,18 +6,16 @@ const EventCard = (
 ) => {
   return (
     <div>
-        <Link to={`/event/${title}`}
-         onClick={() =>
-         {
-            window.scroll(0,0);
-         }
-         }
-         state={{img,date,title,description}}
-        >
-        <div className='p-4 shadow-lg transition-all duration-500 hover:shadow-xl bg-orange-100'>
+       <Link
+  to={`/event/${title}`}
+  state={{ img, date, title, description }}
+  onClick={() => window.scrollTo(0, 0)}
+>
+
+        <div className='p-4 shadow-lg transition-all duration-500 hover:shadow-xl bg-orange-100 '>
         <div className='overflow-hidden'>
          <img src={img} alt=''
-         className='mx-auto h-[250px] w-full object-cover transition-all duration-700 hover:skew-x-2 hover:scale-100'/>
+         className='mx-auto h-[250px] w-full object-cover transition-all duration-700 hover:skew-x-2 hover:scale-100 rounded-xl'/>
         </div>
         <div className='flex justify-between pt-2 text-slate-600'>
             <p>{date}</p>

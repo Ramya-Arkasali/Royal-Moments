@@ -76,10 +76,10 @@ const EventComp = () => {
         <div data-aos='fade-up' className='container'>
             <h1 className='my-8 border-l-8 border-amber-700 py-2 pl-2 text-3xl font-bold'>Events</h1>
             <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3'>
-                {EventData.map((item,index)=>
-                (
-                    <EventCard key={index} {...item}/>
-                ))}
+                {EventData.map((item) => (
+  <EventCard key={item.title} {...item} />
+))}
+
             </div>
         </div>
     </div>

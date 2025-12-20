@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Cards = () => {
     const settings = {
      dots:true,
-     Infinite:true,
+     infinite:true,
      speed:500,
      slidesToShow:3,
      slidesToScroll:3,
