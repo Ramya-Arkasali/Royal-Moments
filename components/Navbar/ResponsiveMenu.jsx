@@ -1,32 +1,38 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 const navbarLinks = [
-  { name: "Home", link: "/" },
+  { name: "Home", link: "/home" },
   { name: "Events", link: "/event" },
   { name: "About", link: "/about" },
   { name: "Contact", link: "/contact" },
 ];
 
-const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
+const ResponsiveMenu = ({ ShowMenu, setShowMenu }) => {
   return (
     <div
       className={`${
-        showMenu ? "left-0" : "left-full"
-      } fixed top-0 bottom-0 z-20 h-screen w-[75%] 
-      bg-white px-8 pt-16 pb-6 text-black 
-      transition-all duration-300 md:hidden rounded-r-xl shadow-lg`}
+        ShowMenu ? "left-0" : "-left-full"
+      } fixed top-0 z-50 h-screen w-[75%]
+      bg-orange-50 text-black
+      px-6 pt-16 transition-all duration-300
+      md:hidden shadow-lg`}
     >
-      <FaUserCircle size={50} className="text-gray-500" />
-      <h1 className="mt-2 text-gray-500">Hello User</h1>
+      {/* User */}
+      <div className="flex flex-col items-start gap-4 mb-10">
+        <FaUserCircle size={48} className="text-gray-600" />
+        <p className="text-gray-600 text-sm">Hello User</p>
+      </div>
 
-      <ul className="mt-12 space-y-4 text-xl">
+      {/* Links */}
+      <ul className="flex flex-col gap-6 text-lg font-semibold">
         {navbarLinks.map(({ name, link }) => (
           <li key={name}>
             <Link
               to={link}
               onClick={() => setShowMenu(false)}
-              className="block"
+              className="block hover:text-amber-600 transition"
             >
               {name}
             </Link>
@@ -38,4 +44,3 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
 };
 
 export default ResponsiveMenu;
-
